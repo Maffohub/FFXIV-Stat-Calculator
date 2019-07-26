@@ -5,6 +5,7 @@ body{
 	margin:0;
 	background-color: #1c1f21;
 }
+
 h1{
 	font-size: 48px;
 	background: #fff9f9;
@@ -17,6 +18,7 @@ h1{
 	margin:0 auto;
 	background: #36393f;
 }
+
 #cont_1{
 	width:660px;
 	float:left;
@@ -24,9 +26,13 @@ h1{
 	margin:0;
 }
 
+img{	
+	float:right;
+	margin-top:-339px;
+	width:542px;
+	height:338px;
+}
+
 #footer{
 	clear:left
 }
-nav a:hover{
-	background: #0f0;
-	color: #111;
