@@ -13,7 +13,7 @@ h1{
 }
 
 #container{
-	width:960px;
+	width:976px;
 	padding:0;
 	margin:0 auto;
 	background: #36393f;
@@ -27,13 +27,14 @@ h1{
 }
 
 img{	
-	float:left;
-	margin-top:-35.1%;
-	margin-left:39%;
+	float:right;
+	margin-top:-34.9%;
+	margin-left:30%;
 	width:56%;
-	height:43.3%;
+	height:43.5%;
 }
 
 #footer{
 	clear:left
 }
+
