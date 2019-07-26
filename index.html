@@ -153,7 +153,39 @@
 	}else{
 		document.calculator.gcd4.value = "4.0s";
 		}
-		
+	
+	gcd = 20;
+	gcd = gcd * (1 - skspspeed/100);
+	if (skspspeed>0){
+	document.calculator.gcd20.value = gcd.toFixed(2)+ "s";
+	}else{
+		document.calculator.gcd20.value = "20.0s";
+		}
+	
+	gcd = 30;
+	gcd = gcd * (1 - skspspeed/100);
+	if (skspspeed>0){
+	document.calculator.gcd30.value = gcd.toFixed(2)+ "s";
+	}else{
+		document.calculator.gcd30.value = "30.0s";
+		}
+	
+	gcd = 40;
+	gcd = gcd * (1 - skspspeed/100);
+	if (skspspeed>0){
+	document.calculator.gcd40.value = gcd.toFixed(2)+ "s";
+	}else{
+		document.calculator.gcd40.value = "40.0s";
+		}
+	
+	gcd = 60;
+	gcd = gcd * (1 - skspspeed/100);
+	if (skspspeed>0){
+	document.calculator.gcd60.value = gcd.toFixed(2)+ "s";
+	}else{
+		document.calculator.gcd60.value = "60.0s";
+		}
+	
 	 }
 	</script>
 </head>
@@ -220,7 +252,7 @@
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">DH Chance<font style="width: 80px;" color="white"></font></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="dhitc" value="0.0%" disabled /></font></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">DH Damage</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="dhdamage" value="(static)+25%" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="dhdamage" value="(static) +25%" disabled /></font></td>
 	</tr>
 	
 	<tr>
@@ -251,21 +283,35 @@
 	<font color="black">
 	<tr>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">1.5s</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="3" class="calculator-screen" name="gcd15" value="1.5" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd15" value="1.5" disabled /></font></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">2.0s</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="3" class="calculator-screen" name="gcd2" value="2.0s" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd2" value="2.0s" disabled /></font></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">2.5s</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="3" class="calculator-screen" name="gcd25" value="2.5s" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd25" value="2.5s" disabled /></font></td>
 
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">2.s</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="3" class="calculator-screen" name="gcd28" value="2.5s" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">2.8s</font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd28" value="2.8s" disabled /></font></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">3.0s</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="3" class="calculator-screen" name="gcd3" value="3.0s" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd3" value="3.0s" disabled /></font></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">3.5s</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="3" class="calculator-screen" name="gcd35" value="3.5s" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd35" value="3.5s" disabled /></font></td>
 
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">4.0s</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="3" class="calculator-screen" name="gcd4" value="4.0s" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd4" value="4.0s" disabled /></font></td>
+	</tr>
+	
+	<tr>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">20.0s</font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd20" value="20.0s" disabled /></font></td>
+	
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">30.0s</font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd30" value="30.0s" disabled /></font></td>
+	
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">40.0s</font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd40" value="40.0s" disabled /></font></td>
+	
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">60.0s</font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" size="5" class="calculator-screen" name="gcd60" value="60.0s" disabled /></font></td>
 	</tr>
 </table>
 
