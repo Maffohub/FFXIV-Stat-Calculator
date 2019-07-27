@@ -29,12 +29,16 @@ h1{
 img{	
 	float:left;
 	margin-top:-340px;
-	margin-left:350px;
-	width:56%;
-	height:43.5%;
+	margin-left:355px;
+	
+}
+
+table.gcdtable {
+	float:left;
+	margin-top:-160px;
 }
 
 #footer{
+	height: 1.5rem;
 	clear:left
 }
-
