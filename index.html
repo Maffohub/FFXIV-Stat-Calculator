@@ -53,6 +53,10 @@
 	lv[71] = new Array (296,365,2263); lv[72] = new Array (300,366,2360); lv[73] = new Array (305,367,2461); lv[74] = new Array (310,368,2566); lv[75] = new Array (315,370,2676);
 	lv[76] = new Array (320,372,2790); lv[77] = new Array (325,374,2910); lv[78] = new Array (330,376,3034); lv[79] = new Array (355,378,3164); lv[80] = new Array (340,380,3300);
 	
+	//Level select function
+	function lvSel(e) {
+    document.getElementById("lvSelect").value = e.target.value
+}
 	//button function
 	function result() {
 	//more variables
@@ -76,6 +80,9 @@
 	document.calculator.critc.value = "+5%";
 	}else{
 		document.calculator.critc.value = "+"+critchance+"%";
+		if (critchance > 100){
+		document.calculator.critc.value = "+100%";
+		}
 		}
 		
 	//Critical Damage
@@ -91,6 +98,9 @@
 	dhchance = Math.floor(550*(directhit-Sub)/Div)/10;
 	if (dhchance>0){
 	document.calculator.dhitc.value = "+"+dhchance.toFixed(2)+ "%";
+	if (dhchance > 100){
+		document.calculator.dhitc.value = "+100%";
+		}
 	}else{
 		document.calculator.dhitc.value = "+0%";
 		}
@@ -117,6 +127,9 @@
 	defreduction = Math.floor(15*defense/Div);
 	if (defreduction>0){
 	document.calculator.defre.value ="+"+ defreduction.toFixed(2)+ "%";
+	if (defreduction > 100){
+		document.calculator.defre.value = "+99.99%";
+		}
 	}else{
 		document.calculator.defre.value = "0%";
 		}
@@ -138,7 +151,6 @@
 	}else{
 		document.calculator.gcdred.value = "+0%";
 		}
-
 	//DoT scalar
 	skspspeed = Math.floor(130*(speed-Sub)/Div+1000)/1000;
 	t=skspspeed*100-100;//conversion to percent value
@@ -169,7 +181,6 @@
 	}else{
 		document.calculator.gcd2.value = "2.00s";
 		}
-
 	//2.50s	
 	gcd = Math.floor(2.50 *(1000-(130*(speed-Sub)/Div))*10)/10000;
 	if (skspspeed>1){
@@ -189,7 +200,6 @@
 	}else{
 		document.calculator.gcd28.value = "2.80s";
 		}
-
 	//3.00s	
 	gcd = Math.floor(3.00 *(1000-(130*(speed-Sub)/Div))*10)/10000;
 	if (skspspeed>1){
@@ -199,7 +209,6 @@
 	}else{
 		document.calculator.gcd3.value = "3.00s";
 		}
-
 	//3.50s	
 	gcd = Math.floor(3.50 *(1000-(130*(speed-Sub)/Div))*10)/10000;
 	if (skspspeed>1){
@@ -209,7 +218,6 @@
 	}else{
 		document.calculator.gcd35.value = "3.50s";
 		}
-
 	//4.00s	
 	gcd = Math.floor(4.00 *(1000-(130*(speed-Sub)/Div))*10)/10000;
 	if (skspspeed>1){
@@ -282,17 +290,26 @@
 	
 	<tr>
 	<td colspan =2 align="center" valign="middle"><font color=ffffff>Enter your stats</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Level</td>
-	<td align="center" valign="middle"><font color="black"><input type="number" class="calculator-screen" name="lvinput" placeholder="80" style="width: 60px;" min="1" max="80" enabled /></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Level<br>cap/manual</td>
+	<td align="center" valign="middle"><font color="black"><select name="" onchange="lvSel(event)">
+    <option disabled selected>Cap</option>
+    <option value="80">80</option>
+    <option value="70">70</option>
+    <option value="60">60</option>
+    <option value="50">50</option>
+	</select>
+	<td align="center" valign="middle"><font color="black"><input type="number" class="calculator-screen" id="lvSelect" name="lvinput" value="80" style="width: 50px;" min="1" max="80" enabled /></td>
 	</tr>
 	
+	
+  
 	<tr>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Critical</td>
 	<td align="center" valign="middle"><font color="black"><input type="number" class="calculator-screen" name="crit" placeholder="380" style="width: 60px;" min="0" max="9999" enabled /></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Direct Hit</font></td>
-	<td align="center" valign="middle"><font color="black"><input type="number" class="calculator-screen" name="dhit" placeholder="380" style="width: 60px;" min="0" max="9999" enabled /></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Determination</font></td>
 	<td align="center" valign="middle"><font color="black"><input type="number" class="calculator-screen" name="det" placeholder="340" style="width: 60px;" min="0" max="9999" enabled /></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Direct Hit</font></td>
+	<td align="center" valign="middle"><font color="black"><input type="number" class="calculator-screen" name="dhit" placeholder="380" style="width: 60px;" min="0" max="9999" enabled /></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Speed</font></td>
 	<td align="center" valign="middle"><font color="black"><input type="number" class="calculator-screen" name="spd" placeholder="380" style="width: 60px;" min="0" max="9999" enabled /></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Tenacity</font></td>
@@ -325,6 +342,13 @@
 	</tr>
 	
 	<tr>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">DET Base Damage</font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="deter" value="1x" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Tenacity DMG/DEF</font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="tendmg" value="1x" disabled /></font></td>
+	</tr>
+	
+	<tr>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">DH Chance<font style="width: 80px;" color="white"></font></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="dhitc" value="0%" disabled /></font></td>
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">DH Damage</font></td>
@@ -332,10 +356,10 @@
 	</tr>
 	
 	<tr>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">DET Base Damage</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="deter" value="1x" disabled /></font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Tenacity DMG/DEF</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="tendmg" value="1x" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Speed</font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="gcdred" value="1x" disabled /></font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">DoT Tick damage</font></td>
+	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="gcddot" value="1x" disabled /></font></td>
 	</tr>
 	
 	<tr>
@@ -345,12 +369,6 @@
 	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="mpr" value="+0 MP/tick" disabled /></font></td>
 	</tr>
 	
-	<tr>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">Speed</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="gcdred" value="1x" disabled /></font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white">DoT Tick damage</font></td>
-	<td bgcolor=#7d7d7d align="center" valign="middle"><font color="white"><input type="text" style="width: 80px;" class="calculator-screen" name="gcddot" value="1x" disabled /></font></td>
-	</tr>
 </table>
 
 	<img src="https://raw.githubusercontent.com/Maffohub/FFXIV-Stat-Calculator/master/img.png" alt="Norah Blackfell">
